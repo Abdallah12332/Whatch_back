@@ -14,7 +14,7 @@ export class CartService {
     private readonly ProductRepo: Repository<Product>,
   ) {}
 
-  async Create_Order(reel_username: string, id: number) {
+  async Create_Order(reel_username: string, id: number): Promise<string> {
     const user = await this.UserRepo.findOne({
       where: { reel_username },
     });
@@ -31,6 +31,10 @@ export class CartService {
     }
     const stringy_Porduct = JSON.stringify(product);
 
+    await this.CartRepo.update(
+      { reel_username: 'III' },
+      { products: stringy_Porduct },
+    );
     return stringy_Porduct;
   }
 }
