@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input Create_Product {
+  how_many_one_buy_it: Float!
+  image: String!
+  name: String!
+  price: Float!
+  type: String!
+}
+
+input FindUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createProduct(product: Create_Product!): Product!
+  createUser(user: UserDtoC!): User!
+  deleteProduct(id: Float!): Product!
+  deleteUser(id: Float!): User!
+  updateProduct(id: Float!, product: Update_Product!): Product!
+  updateUser(id: Float!, user: UserDtoU!): User!
+}
+
+type Product {
+  how_many_one_buy_it: Float!
+  id: ID!
+  image: String!
+  name: String!
+  price: Float!
+  type: String!
+}
+
+type Query {
+  findAllProducts: [Product!]!
+  findAllUsers: [User!]!
+  findOneProduct(id: Float!): Product!
+  findOneUser(id: FindUserInput!): User!
+  search_products(name: String!): [Product!]!
+}
+
+input Update_Product {
+  how_many_one_buy_it: Float
+  image: String
+  name: String
+  price: Float
+  type: String
+}
+
+type User {
+  id: ID!
+  reel_username: String!
+  username: String!
+}
+
+input UserDtoC {
+  password: String!
+  reel_username: String!
+  role: String! = "user"
+  username: String!
+}
+
+input UserDtoU {
+  password: String
+  reel_username: String
+  username: String
+}

@@ -1,0 +1,15 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserDto {
+  id: ID!
+  user_name: String!
+  email: String!
+  password: String!
+  refresh_token: String!
+}
+
+type Query {
+  findAll: [UserDto!]!
+}
